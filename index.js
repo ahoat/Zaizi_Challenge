@@ -12,6 +12,7 @@ const swap = document.querySelector("#swap");
 const outcome = document.querySelector("#outcome");
 
 let playerChoice;
+let hostChoice;
 
 door1.addEventListener('click', function() {
   selection.style.display = "block";
@@ -34,10 +35,6 @@ door3.addEventListener('click', function() {
   hostDoor(playerChoice);
 });
 
-
-stick.addEventListener('click', () => console.log("CLICKED stick"));
-swap.addEventListener('click', () => console.log("CLICKED swap"));
-
 // Fisher-Yates shuffle to shuffle the array
 
 let prizes = [1,0,0];
@@ -58,10 +55,13 @@ shuffle(prizes);
 
 function hostDoor(num) {
   if (door1 === 0 && num !== 1 ) {
+    hostChoice = 1;
     host.textContent = "The host has opened Door 1, revealing a goat"
   } else if (door2 === 0 && num !== 2) {
+    hostChoice = 2;
     host.textContent = "The host has opened Door 2, revealing a goat"
   } else if (door3 === 0 && num !== 3) {
+    hostChoice = 3;
     host.textContent = "The host has opened Door 3, revealing a goat"
   }
 }
@@ -81,3 +81,14 @@ stick.addEventListener('click', function (){
   }
 });
 
+swap.addEventListener('click', function () {
+if (playerChoice === 1 && door1 === 1) {
+  outcome.textContent = "Sorry you lose!" 
+} else if (playerChoice === 2 && door2 === 1) {
+  outcome.textContent = "Sorry you lose!" 
+} else if (playerChoice === 3 && door3 === 1) {
+  outcome.textContent = "Sorry you lose!" }
+  else {
+    outcome.textContent = "Congratulations! You Win!" 
+  }
+});
