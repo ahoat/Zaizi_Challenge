@@ -66,6 +66,8 @@ function hostDoor(num) {
   }
 }
 
+
+// Logic if user decides to stick
 stick.addEventListener('click', function (){
   if (playerChoice === 1 && door1 === 1) {
     outcome.textContent = "Congratulations! You Win!" 
@@ -81,6 +83,7 @@ stick.addEventListener('click', function (){
   }
 });
 
+// Logic if user clicks swap button
 swap.addEventListener('click', function () {
 if (playerChoice === 1 && door1 === 1) {
   outcome.textContent = "Sorry you lose!" 
