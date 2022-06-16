@@ -4,22 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
   <title>Document</title>
 </head>
 <body>
   <header>
   </header>
   <main>
+      <section>
       <h1><u>The Monty Hall Problem</u></h1>
-      <p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">The Monty Hall Problem</a>is a well known conundrum based on probability</p>
+      <p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">The Monty Hall Problem</a> is a well known conundrum based on probability</p>
       <p>A gameshow contestant is given a choice of 3 doors.  Behind 1 is a car, and behind the other 2 are goats.
           When the contestant has chosen a door, the game show host will open one of the other doors which will always have a goat behind it.
       </p>
       <p>The contestant is given the option to stick with their chosen door or switch to the remaining unopened door.</p>
 
       <p>The aim of this challenge is to prove Vos Savant's findings that statistically, the best option is always to switch doors.</p>
-  </main>
-  <script src="scripts.js"></script>
+      </section>
+
+      <div class="chooseDoor">
+          <button id="door1">Door 1</button>
+          <button id="door2">Door 2</button>
+          <button id="door3">Door 3</button>
+      </div>
+
+      <div id="selection">
+          <p id="chosen">You have selected </p>
+      </div>
+
+      <div class="stickOrSwitch">
+          <button id="stick">Stick</button>
+          <button id="swap">Swap</button>
+      </div>
+    </main>
+  <script src="index.js"></script>
 </body>
 </html>
