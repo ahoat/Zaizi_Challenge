@@ -108,7 +108,7 @@ if (playerChoice === 1 && door1 === 1) {
   else {
     outcome.textContent = "Congratulations! You Win!" 
     winCount ++;}
-    swapWins.textContent = `Number of wins from Swapping ${winCount} out of ${gameCount} games.  That's a ${winCount/gameCount * 100}% chance of winning from swapping`;
+    swapWins.textContent = `Number of wins from Swapping ${winCount} out of ${gameCount} games.  That's a ${Math.round(winCount/gameCount * 100)}% chance of winning from swapping`;
 
   
   shuffle(prizes);
