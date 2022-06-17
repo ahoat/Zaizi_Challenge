@@ -10,6 +10,9 @@ const host = document.querySelector("#host");
 const stick = document.querySelector("#stick");
 const swap = document.querySelector("#swap");
 const outcome = document.querySelector("#outcome");
+const stickWins = document.querySelector("#stickWins");
+const swapWins = document.querySelector("#swapWins");
+const games = document.querySelector("#games");
 
 let playerChoice;
 let hostChoice;
@@ -66,25 +69,36 @@ function hostDoor(num) {
   }
 }
 
-
+let winCount = 0;
+let gameCount = 0;
 // Logic if user decides to stick
+
 stick.addEventListener('click', function (){
+  gameCount ++;
+  games.textContent = `Number of Games = ${gameCount}`;
   if (playerChoice === 1 && door1 === 1) {
     outcome.textContent = "Congratulations! You Win!" 
+    winCount ++;
   } 
   else if (playerChoice === 2 && door2 === 1) {
     outcome.textContent = "Congratulations! You Win!" 
+    winCount ++;
   }
   else if (playerChoice === 3 && door3 === 1) {
     outcome.textContent = "Congratulations! You Win!" 
+    winCount ++;
   }
   else { 
     outcome.textContent = "Sorry you lose!";
+    
   }
+  shuffle(prizes);
 });
 
 // Logic if user clicks swap button
 swap.addEventListener('click', function () {
+  gameCount ++;
+  games.textContent = `Number of Games = ${gameCount}`;
 if (playerChoice === 1 && door1 === 1) {
   outcome.textContent = "Sorry you lose!" 
 } else if (playerChoice === 2 && door2 === 1) {
@@ -93,5 +107,9 @@ if (playerChoice === 1 && door1 === 1) {
   outcome.textContent = "Sorry you lose!" }
   else {
     outcome.textContent = "Congratulations! You Win!" 
+    winCount ++;
+    swapWins.textContent = `Number of wins from Swapping ${winCount} out of ${gameCount} games.  That's a ${winCount/gameCount * 100}% chance of winning from swapping`;
+
   }
+  shuffle(prizes);
 });
