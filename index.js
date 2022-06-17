@@ -76,22 +76,21 @@ let gameCount = 0;
 stick.addEventListener('click', function (){
   gameCount ++;
   games.textContent = `Number of Games = ${gameCount}`;
-  if (playerChoice === 1 && door1 === 1) {
-    outcome.textContent = "Congratulations! You Win!" 
-    winCount ++;
+  if (playerChoice === 1 && door1 === 0) {
+    outcome.textContent = "Sorry you lose!"
   } 
-  else if (playerChoice === 2 && door2 === 1) {
-    outcome.textContent = "Congratulations! You Win!" 
-    winCount ++;
+  else if (playerChoice === 2 && door2 === 0) {
+    outcome.textContent = "Sorry you lose!"
   }
-  else if (playerChoice === 3 && door3 === 1) {
-    outcome.textContent = "Congratulations! You Win!" 
-    winCount ++;
+  else if (playerChoice === 3 && door3 === 0) {
+    outcome.textContent = "Sorry you lose!"
   }
   else { 
-    outcome.textContent = "Sorry you lose!";
-    
+    outcome.textContent = "Congratulations! You Win!" ;
+    winCount++;
   }
+    stickWins.textContent = `Number of wins from Sticking ${winCount} out of ${gameCount} games.  That's a ${Math.round(winCount/gameCount * 100)}% chance of winning from swapping`;
+
   shuffle(prizes);
 });
 
